@@ -12,10 +12,11 @@ namespace Control_de_Vemta_de_Boletos
 {
     public partial class frmCine : Form
     {
-
+        ListViewItem item;
         double precio = 0;
         string categoria = "";
-        
+
+
 
         public frmCine()
         {
@@ -27,25 +28,33 @@ namespace Control_de_Vemta_de_Boletos
             categoria = lblCategoria.Text;
             int cantidad = int.Parse(txtCantidad.Text);
 
+
+
+
             double subtotal = precio * cantidad;
             double descuento = 0;
 
             switch (categoria)
             {
-                case "Niño": descuento = 20.0 / 100 * subtotal;
+                case "Niño":
+                    descuento = 20.0 / 100 * subtotal;
 
                     break;
 
-                case "JovenI":  descuento = 10.0 / 100 * subtotal;
+                case "JovenI":
+                    descuento = 10.0 / 100 * subtotal;
                     break;
 
-                case "JovenII": descuento = 5.0 / 100 * subtotal;
+                case "JovenII":
+                    descuento = 5.0 / 100 * subtotal;
                     break;
 
-                case "AdultoI": descuento = 10.0 / 100 * subtotal;
+                case "AdultoI":
+                    descuento = 10.0 / 100 * subtotal;
                     break;
 
-                case "AdultoII": descuento = 20.0 / 100 * subtotal;
+                case "AdultoII":
+                    descuento = 20.0 / 100 * subtotal;
                     break;
 
             }
@@ -89,48 +98,80 @@ namespace Control_de_Vemta_de_Boletos
             lblCategoria.Text = categoria;
 
 
-            if (cbEdad.SelectedItem.Equals("Niño"))
+            if (cbEdad.SelectedItem.Equals("01 - 12"))
             {
                 image_Niño.Visible = true;
                 JovenII.Visible = false;
                 J2.Visible = false;
                 AdultoI.Visible = false;
                 A2.Visible = false;
+
+                Bryan.Visible = true;
+                Jhon.Visible = false;
+                Oscar.Visible = false;
+                Zacarias.Visible = false;
+                LeandroKun.Visible = false;
             }
 
-            if (cbEdad.SelectedItem.Equals("JovenI"))
+            if (cbEdad.SelectedItem.Equals("13 - 18"))
             {
                 image_Niño.Visible = false;
                 JovenII.Visible = true;
                 J2.Visible = false;
                 AdultoI.Visible = false;
                 A2.Visible = false;
+
+                Bryan.Visible = false;
+                Jhon.Visible = true;
+                Oscar.Visible = false;
+                Zacarias.Visible = false;
+                LeandroKun.Visible = false;
+
+
             }
 
-            if (cbEdad.SelectedItem.Equals("JovenII"))
+            if (cbEdad.SelectedItem.Equals("19 - 26"))
             {
                 image_Niño.Visible = false;
                 JovenII.Visible = false;
                 J2.Visible = true;
                 AdultoI.Visible = false;
                 A2.Visible = false;
+
+                Bryan.Visible = false;
+                Jhon.Visible = false;
+                Oscar.Visible = true;
+                Zacarias.Visible = false;
+                LeandroKun.Visible = false;
             }
 
-            if (cbEdad.SelectedItem.Equals("AdultoI"))
+            if (cbEdad.SelectedItem.Equals("27 - 60"))
             {
                 image_Niño.Visible = false;
                 JovenII.Visible = false;
                 J2.Visible = false;
                 AdultoI.Visible = true;
                 A2.Visible = false;
+
+                Bryan.Visible = false;
+                Jhon.Visible = false;
+                Oscar.Visible = false;
+                Zacarias.Visible = true;
+                LeandroKun.Visible = false;
             }
-            if (cbEdad.SelectedItem.Equals("AdultoII"))
+            if (cbEdad.SelectedItem.Equals("60 a Mas"))
             {
                 image_Niño.Visible = false;
                 JovenII.Visible = false;
                 J2.Visible = false;
                 AdultoI.Visible = false;
                 A2.Visible = true;
+
+                Bryan.Visible = false;
+                Jhon.Visible = false;
+                Oscar.Visible = false;
+                Zacarias.Visible = false;
+                LeandroKun.Visible = true;
             }
 
         }
@@ -167,7 +208,8 @@ namespace Control_de_Vemta_de_Boletos
                 switch (categoria)
                 {
 
-                    case "Niño": aNiño += double.Parse(lvRegistro.Items[i].SubItems[5].Text);
+                    case "Niño":
+                        aNiño += double.Parse(lvRegistro.Items[i].SubItems[5].Text);
                         break;
 
                     case "JovenI": aJovenI += double.Parse(lvRegistro.Items[i].SubItems[5].Text); break;
@@ -222,7 +264,7 @@ namespace Control_de_Vemta_de_Boletos
             lvEstadisticas.Items.Add(row);
 
 
-           
+
 
         }
 
@@ -244,6 +286,40 @@ namespace Control_de_Vemta_de_Boletos
             J2.Visible = false;
             AdultoI.Visible = false;
             A2.Visible = false;
+
+            Bryan.Visible = false;
+            Jhon.Visible = false;
+            Oscar.Visible = false;
+            Zacarias.Visible = false;
+            LeandroKun.Visible = false;
+
+
+        }
+
+        private void lvRegistro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvRegistro_MouseClick(object sender, MouseEventArgs e)
+        {
+            item = lvRegistro.GetItemAt(e.X, e.Y);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            lvRegistro.Items.Clear();
+            lvEstadisticas.Items.Clear();
+            txtCantidad.Clear();
+            lblPrecio.Text = "";
+            lblCategoria.Text = "";
+            cbEdad.Text = "";
+
+
+            txtRazonSocial.Clear();
+            txtRazonSocial.Focus();
+
+
         }
     }
 }

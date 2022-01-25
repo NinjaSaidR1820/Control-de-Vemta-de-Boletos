@@ -61,6 +61,12 @@ namespace Control_de_Vemta_de_Boletos
             this.A2 = new System.Windows.Forms.PictureBox();
             this.J2 = new System.Windows.Forms.PictureBox();
             this.AdultoI = new System.Windows.Forms.PictureBox();
+            this.Bryan = new System.Windows.Forms.Label();
+            this.Jhon = new System.Windows.Forms.Label();
+            this.Oscar = new System.Windows.Forms.Label();
+            this.Zacarias = new System.Windows.Forms.Label();
+            this.LeandroKun = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image_Niño)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JovenII)).BeginInit();
@@ -73,6 +79,7 @@ namespace Control_de_Vemta_de_Boletos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(322, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 21);
@@ -92,12 +99,14 @@ namespace Control_de_Vemta_de_Boletos
             this.lvRegistro.ForeColor = System.Drawing.SystemColors.Window;
             this.lvRegistro.GridLines = true;
             this.lvRegistro.HideSelection = false;
-            this.lvRegistro.Location = new System.Drawing.Point(71, 170);
+            this.lvRegistro.Location = new System.Drawing.Point(61, 170);
             this.lvRegistro.Name = "lvRegistro";
             this.lvRegistro.Size = new System.Drawing.Size(628, 144);
             this.lvRegistro.TabIndex = 1;
             this.lvRegistro.UseCompatibleStateImageBehavior = false;
             this.lvRegistro.View = System.Windows.Forms.View.Details;
+            this.lvRegistro.SelectedIndexChanged += new System.EventHandler(this.lvRegistro_SelectedIndexChanged);
+            this.lvRegistro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvRegistro_MouseClick);
             // 
             // columnHeader1
             // 
@@ -131,37 +140,47 @@ namespace Control_de_Vemta_de_Boletos
             // 
             // brnMostrar
             // 
+            this.brnMostrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.brnMostrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brnMostrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.brnMostrar.Location = new System.Drawing.Point(65, 320);
             this.brnMostrar.Name = "brnMostrar";
             this.brnMostrar.Size = new System.Drawing.Size(149, 33);
             this.brnMostrar.TabIndex = 3;
             this.brnMostrar.Text = "Mostrar Estadisticas";
-            this.brnMostrar.UseVisualStyleBackColor = true;
+            this.brnMostrar.UseVisualStyleBackColor = false;
             this.brnMostrar.Click += new System.EventHandler(this.brnMostrar_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSalir.Location = new System.Drawing.Point(818, 466);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(95, 37);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.DarkBlue;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRegistrar.Location = new System.Drawing.Point(699, 101);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(90, 57);
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(58, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
@@ -185,6 +204,7 @@ namespace Control_de_Vemta_de_Boletos
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.lblCategoria);
             this.groupBox1.Controls.Add(this.lblPrecio);
@@ -211,6 +231,7 @@ namespace Control_de_Vemta_de_Boletos
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblCategoria.Location = new System.Drawing.Point(257, 35);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(83, 17);
@@ -221,6 +242,7 @@ namespace Control_de_Vemta_de_Boletos
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblPrecio.Location = new System.Drawing.Point(147, 35);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(62, 17);
@@ -231,11 +253,11 @@ namespace Control_de_Vemta_de_Boletos
             // 
             this.cbEdad.FormattingEnabled = true;
             this.cbEdad.Items.AddRange(new object[] {
-            "Niño",
-            "JovenI",
-            "JovenII",
-            "AdultoI",
-            "AdultoII"});
+            "01 - 12",
+            "13 - 18",
+            "19 - 26",
+            "27 - 60",
+            "60 a Mas"});
             this.cbEdad.Location = new System.Drawing.Point(4, 32);
             this.cbEdad.Name = "cbEdad";
             this.cbEdad.Size = new System.Drawing.Size(121, 21);
@@ -245,6 +267,7 @@ namespace Control_de_Vemta_de_Boletos
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label8.Location = new System.Drawing.Point(391, 10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 13);
@@ -254,6 +277,7 @@ namespace Control_de_Vemta_de_Boletos
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(257, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
@@ -263,6 +287,7 @@ namespace Control_de_Vemta_de_Boletos
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(136, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
@@ -272,6 +297,8 @@ namespace Control_de_Vemta_de_Boletos
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(7, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
@@ -328,9 +355,9 @@ namespace Control_de_Vemta_de_Boletos
             // 
             this.A2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("A2.BackgroundImage")));
             this.A2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.A2.Location = new System.Drawing.Point(813, 41);
+            this.A2.Location = new System.Drawing.Point(813, 37);
             this.A2.Name = "A2";
-            this.A2.Size = new System.Drawing.Size(170, 161);
+            this.A2.Size = new System.Drawing.Size(170, 185);
             this.A2.TabIndex = 13;
             this.A2.TabStop = false;
             // 
@@ -354,11 +381,79 @@ namespace Control_de_Vemta_de_Boletos
             this.AdultoI.TabIndex = 15;
             this.AdultoI.TabStop = false;
             // 
+            // Bryan
+            // 
+            this.Bryan.AutoSize = true;
+            this.Bryan.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bryan.Location = new System.Drawing.Point(828, 225);
+            this.Bryan.Name = "Bryan";
+            this.Bryan.Size = new System.Drawing.Size(144, 22);
+            this.Bryan.TabIndex = 16;
+            this.Bryan.Text = "Bryan Rodriguez";
+            // 
+            // Jhon
+            // 
+            this.Jhon.AutoSize = true;
+            this.Jhon.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Jhon.Location = new System.Drawing.Point(848, 225);
+            this.Jhon.Name = "Jhon";
+            this.Jhon.Size = new System.Drawing.Size(97, 22);
+            this.Jhon.TabIndex = 17;
+            this.Jhon.Text = "Jhon Lenin";
+            // 
+            // Oscar
+            // 
+            this.Oscar.AutoSize = true;
+            this.Oscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Oscar.Location = new System.Drawing.Point(828, 225);
+            this.Oscar.Name = "Oscar";
+            this.Oscar.Size = new System.Drawing.Size(110, 22);
+            this.Oscar.TabIndex = 18;
+            this.Oscar.Text = "Oscar Garcia";
+            // 
+            // Zacarias
+            // 
+            this.Zacarias.AutoSize = true;
+            this.Zacarias.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Zacarias.Location = new System.Drawing.Point(834, 225);
+            this.Zacarias.Name = "Zacarias";
+            this.Zacarias.Size = new System.Drawing.Size(129, 22);
+            this.Zacarias.TabIndex = 19;
+            this.Zacarias.Text = "Zacarias Flores";
+            // 
+            // LeandroKun
+            // 
+            this.LeandroKun.AutoSize = true;
+            this.LeandroKun.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeandroKun.Location = new System.Drawing.Point(842, 225);
+            this.LeandroKun.Name = "LeandroKun";
+            this.LeandroKun.Size = new System.Drawing.Size(103, 22);
+            this.LeandroKun.TabIndex = 20;
+            this.LeandroKun.Text = "Mr.Ramirez";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLimpiar.Location = new System.Drawing.Point(729, 290);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(80, 34);
+            this.btnLimpiar.TabIndex = 21;
+            this.btnLimpiar.Text = "Limpiar Todo";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // frmCine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1005, 551);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.LeandroKun);
+            this.Controls.Add(this.Zacarias);
+            this.Controls.Add(this.Oscar);
+            this.Controls.Add(this.Jhon);
+            this.Controls.Add(this.Bryan);
             this.Controls.Add(this.AdultoI);
             this.Controls.Add(this.J2);
             this.Controls.Add(this.A2);
@@ -374,8 +469,9 @@ namespace Control_de_Vemta_de_Boletos
             this.Controls.Add(this.brnMostrar);
             this.Controls.Add(this.lvRegistro);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "frmCine";
-            this.Text = "Form1";
+            this.Text = "Control De Ventas De Boletos";
             this.Load += new System.EventHandler(this.frmCine_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -422,6 +518,12 @@ namespace Control_de_Vemta_de_Boletos
         private System.Windows.Forms.PictureBox A2;
         private System.Windows.Forms.PictureBox J2;
         private System.Windows.Forms.PictureBox AdultoI;
+        private System.Windows.Forms.Label Bryan;
+        private System.Windows.Forms.Label Jhon;
+        private System.Windows.Forms.Label Oscar;
+        private System.Windows.Forms.Label Zacarias;
+        private System.Windows.Forms.Label LeandroKun;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 
